@@ -11,7 +11,7 @@ plugins {
 	id 'maven-publish'
 	id 'java'
 	id 'com.github.johnrengelman.shadow' version '7.0.0' apply false
-	id 'fabric-loom' version '0.11-SNAPSHOT' apply false
+	id 'fabric-loom' version '1.1-SNAPSHOT' apply false
 	id 'org.cadixdev.licenser' version '0.6.1' apply false
 }
 
@@ -27,6 +27,9 @@ allprojects {
 	group = rootProject.maven_group
 
 	repositories {
+		flatDir {
+			dirs "libs"
+		}
 		mavenCentral()
 		maven { url "https://maven.siphalor.de" }
 		maven { url "https://maven.shedaniel.me" }
